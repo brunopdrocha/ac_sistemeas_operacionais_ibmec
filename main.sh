@@ -86,13 +86,54 @@ opcoes(){
 
 # Função para renderizar o menu dinâmico
 exibir_menu() {
+    
     clear
 
-    # Chama a função que processa a sua lista do cabeçalho
-    cabecalho
+    while [ true ]; do
+        # Chama a função que processa a sua lista do cabeçalho
+        cabecalho
+        
+        # --- EXIBIÇÃO DO MENU ---
+        opcoes
+        # --- LEITURA DA ESCOLHA DO USUÁRIO ---
     
-    # --- EXIBIÇÃO DO MENU ---
-    opcoes
+
+        read escolha
+        case $escolha in
+            1)
+                echo "Você escolheu a Opção 1: Ver Processos"
+                # Aqui você pode adicionar o código para mostrar os processos, por exemplo:
+                ps aux
+                continue
+                ;;
+            2)
+                echo "Você escolheu a Opção 2: Uso de Memória"
+                # Aqui você pode adicionar o código para mostrar o uso de memória, por exemplo:
+                free -h
+                continue
+                ;;
+            3)
+                echo "Você escolheu a Opção 3: Informações de Rede"
+                # Aqui você pode adicionar o código para mostrar as informações de rede, por exemplo:
+                ifconfig
+                continue
+                ;;
+            4)
+                echo "Você escolheu a Opção 4: Logs do Sistema"
+                # Aqui você pode adicionar o código para mostrar os logs do sistema, por exemplo:
+                tail -n 20 /var/log/syslog
+                continue
+                ;;
+            5)
+                echo "Finalizando o programa. Até logo!"
+                break
+                ;;
+            *)
+                echo "Opção inválida. Por favor, selecione uma opção válida."
+                continue
+                ;;
+        esac
+    done
 }
 # Executa o menu
 exibir_menu
