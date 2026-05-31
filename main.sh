@@ -148,10 +148,6 @@ exibir_menu() {
                         total=$(echo "$num1 * $num2" | bc)
                         ;;
                     "/")
-                        if [ "$num2" == "0" ]; then
-                            echo "Erro: Divisão por zero não é permitida."
-                            continue 2
-                        fi
                         total=$(echo "scale=2; $num1 / $num2" | bc)
                         ;;
                 esac
