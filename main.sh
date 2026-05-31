@@ -110,10 +110,7 @@ exibir_menu() {
                 bash src/op3.sh
                 ;;
             4)
-                echo "Você escolheu a Opção 4: Logs do Sistema"
-                # Aqui você pode adicionar o código para mostrar os logs do sistema, por exemplo:
-                tail -n 20 /var/log/syslog
-                continue
+                bash src/op4.sh
                 ;;
             0)
                 echo "Finalizando o programa. Até logo!"
