@@ -105,8 +105,8 @@ exibir_menu() {
                 ;;
             2)
 
-            
-            ;;
+                bash src/op2.sh
+                ;;
 
             3)
                 echo "Você escolheu a Opção 3: Informações de Rede"
