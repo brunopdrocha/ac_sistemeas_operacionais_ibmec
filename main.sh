@@ -104,15 +104,10 @@ exibir_menu() {
                 bash src/op1.sh
                 ;;
             2)
-
                 bash src/op2.sh
                 ;;
-
             3)
-                echo "Você escolheu a Opção 3: Informações de Rede"
-                # Aqui você pode adicionar o código para mostrar as informações de rede, por exemplo:
-                ifconfig
-                continue
+                bash src/op3.sh
                 ;;
             4)
                 echo "Você escolheu a Opção 4: Logs do Sistema"
