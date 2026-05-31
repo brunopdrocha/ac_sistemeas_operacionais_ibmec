@@ -74,8 +74,8 @@ cabecalho() {
 opcoes(){
     echo ""
     echo "Menu de Escolhas:"
-    echo "   1) Opção interativa 1 Operação Matemática"
-    echo "   2) Opção interativa 2 (Exemplo: Uso de Memória)"
+    echo "   1) Opção interativa 1 (Operação Matemática)"
+    echo "   2) Opção interativa 2 (Logs de Aplicação)"
     echo "   3) Opção interativa 3 (Exemplo: Informações de Rede)"
     echo "   4) Opção interativa 4 (Exemplo: Logs do Sistema)"
     echo "   5) Finalizar o programa."
@@ -101,66 +101,13 @@ exibir_menu() {
         read escolha
         case $escolha in
             1)  
-                # Validação da operação matemática
-                while true; do
-                echo "Para iniciar a operação matemática, de deseja realizar uma soma, subtração, multiplicação ou divisão? (Digite +, -, * ou /)"
-                read operacao
-                if [[ "$operacao" != "+" && "$operacao" != "-" && "$operacao" != "*" && "$operacao" != "/" ]]; then
-                    echo "Operação inválida. Por favor, escolha uma operação válida."
-                    continue
-                fi
-                break
-                done
-
-                #Numero1
-
-                while true; do
-                echo "Digite o primeiro número:"
-                read num1
-                if ! [[ "$num1" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
-                    echo "Número inválido. Por favor, digite um número válido."
-                    continue
-                fi
-                break
-                done
-                
-                #Numero2
-                while true; do
-                echo "Digite o segundo número:"
-                read num2
-                if ! [[ "$num2" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
-                    echo "Número inválido. Por favor, digite um número válido."
-                    continue
-                fi
-                break
-                done
-
-                # Calcula o total com base na operação escolhida
-
-                case $operacao in
-                    "+")
-                        total=$(echo "$num1 + $num2" | bc)
-                        ;;
-                    "-")
-                        total=$(echo "$num1 - $num2" | bc)
-                        ;;
-                    "*")
-                        total=$(echo "$num1 * $num2" | bc)
-                        ;;
-                    "/")
-                        total=$(echo "scale=2; $num1 / $num2" | bc)
-                        ;;
-                esac
-                printf "Resultado: %s %s %s = %s" "$num1" "$operacao" "$num2" "$total"
-                echo "" # Quebra de linha para melhor formatação
-                continue
+                bash src/op1.sh
                 ;;
             2)
-                echo "Você escolheu a Opção 2: Uso de Memória"
-                # Aqui você pode adicionar o código para mostrar o uso de memória, por exemplo:
-                free -h
-                continue
-                ;;
+
+            
+            ;;
+
             3)
                 echo "Você escolheu a Opção 3: Informações de Rede"
                 # Aqui você pode adicionar o código para mostrar as informações de rede, por exemplo:
