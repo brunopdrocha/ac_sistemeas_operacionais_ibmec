@@ -1,5 +1,11 @@
 #!/bin/bash
 
+clear
+echo "=================================================================="
+echo "          OPERAÇÃO MATEMÁTICA (OPÇÃO 1)                          "
+echo "=================================================================="
+echo ""
+
 # --- VALIDAÇÃO DA OPERAÇÃO ---
 while true; do
     echo "Para iniciar a operação matemática, deseja realizar uma soma, subtração, multiplicação ou divisão? (Digite +, -, * ou /)"
@@ -67,5 +73,5 @@ printf "Resultado: %s %s %s = %s\n" "$num1" "$operacao" "$num2" "$total"
 echo "--------------------------------------------------"
 echo ""
 
-# Pausa a execução antes de limpar a tela e voltar para o menu
 read -p "Pressione [Enter] para voltar ao menu..."
+exit 0

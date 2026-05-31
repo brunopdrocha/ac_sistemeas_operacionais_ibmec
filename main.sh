@@ -78,7 +78,7 @@ opcoes(){
     echo "   2) Opção interativa 2 (Logs de Aplicação)"
     echo "   3) Opção interativa 3 (Exemplo: Informações de Rede)"
     echo "   4) Opção interativa 4 (Exemplo: Logs do Sistema)"
-    echo "   5) Finalizar o programa."
+    echo "   0) Finalizar o programa."
     echo ""
     echo -n "Selecione uma opção: "
 }
@@ -120,7 +120,7 @@ exibir_menu() {
                 tail -n 20 /var/log/syslog
                 continue
                 ;;
-            5)
+            0)
                 echo "Finalizando o programa. Até logo!"
                 break
                 ;;
